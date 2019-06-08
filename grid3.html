@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Grid</title>
+        <link rel="stylesheet" href="grid.css">
+        <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        #desc {
+            font-size: 1.5rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: darkcyan;
+        }
+        #layout {
+            color: red;
+            font-size: 1.5rem;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="site">
+            <div class="title">
+                <h1>HEAD</h1>
+                <h3>Welcome to CSS Grid Tutorial</h3>
+            </div>
+            <div class="menu">
+                <h1>MENU</h1>
+                <ul>
+                    <li><a href="grid1.html">Page1</a></li>
+                    <li><a href="grid2.html">Page2</a></li>
+                    <li><a href="grid3.html">Page3</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h1>CONTENT</h1>
+                <p id="desc">
+                    grid-template-columns: 1fr 1fr 1fr; <br>
+                    grid-template-rows: 1fr 1fr 1fr 1fr; <br><br>
+                    grid-template-areas: <br>
+                    <div id="layout">
+                    "head head head" <br>
+                    "nav text text" <br>
+                    "nav text text" <br>
+                    "foot foot foot" <br>
+                    </div>
+                </p>
+            </div>
+            <div class="footer">
+                <h1>FOOTER</h1>
+                <footer>Visit github.com/colossus21 for more!</footer>
+            </div>
+        </div>
+        <script>
+                let below960 = `"head head head" <br>
+                          "nav nav nav" <br>
+                          "text text text" <br>
+                          "foot foot foot" <br>`;
+                let above960 = `"head head head" <br>
+                        "nav text text" <br>
+                        "nav text text" <br>
+                        "foot foot foot" <br>`
+                let layout = document.getElementById("layout")          
+                window.addEventListener("resize", function() {
+                    if (window.innerWidth <= 960) {
+                        layout.innerHTML = below960
+                    } else {
+                        layout.innerHTML = above960
+                    }
+                })          
+            </script>
+    </body>
+</html>
